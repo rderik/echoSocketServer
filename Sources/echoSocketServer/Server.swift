@@ -78,7 +78,7 @@ class Server {
           print("Error reading form client\(clientFD) - \(errno)")
           break;  // error
         } else {
-          //This is an ugly way to add the nul-terminator at the end of the buffer we just read
+          //This is an ugly way to add the null-terminator at the end of the buffer we just read
           withUnsafeMutablePointer(to: &buffer) {
                 $0.withMemoryRebound(to: UInt8.self, capacity: readResult + 1) {
                     $0.advanced(by: readResult).assign(repeating: 0, count: 1)
